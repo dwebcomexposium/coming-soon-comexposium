@@ -9,11 +9,12 @@
 /*********** VARIABLE A CHANGER ************/
 
 :root {
-  --main-color: #4C85E7;
-  --main-image: url(../img/cover.jpg);
+  --main-color: #4C85E7;                /*Couleur principale du salon*/	
+  --main-image: url(../img/cover.jpg);  /*Fond image du thème*/ 	
+  --fond-logo:rgba(255,255,255,0.5);    /*Fond blanc flou du logo*/ 	
 	
-	--basic-color: #ffffff;
-	--main-animation-transition : ease-in 0.5s;
+  --basic-color: #ffffff;               /*Couleur de base du texte, par défaut : #ffffff */ 	
+  --main-animation-transition : ease-in 0.5s; /* Animation hover */
 }
 
 
@@ -239,8 +240,7 @@ h3{
 }
 #logo{
 	width: 13em;
-	background-color:rgba(255,255,255,0.5); /*Si le logo est noir on lui donne un fond flou*/ 
-	
+	background-color: var(--fond-logo);
 	padding: 25px 40px;
 }
 /*
