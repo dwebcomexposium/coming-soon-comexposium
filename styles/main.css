@@ -2,19 +2,38 @@
  * Globals
  */
 /* Links */
+
+
+/* PAS BESOINS DE CHERCHER DANS LE CSS VOUS POUVEZ CHANGER TOUTES LES COULEURS ET IMAGES CI-DESSOUS */
+
+/*********** VARIABLE A CHANGER ************/
+
+:root {
+  --main-color: #4C85E7;
+  --main-image: url(../img/cover.jpg);
+	
+	--basic-color: #ffffff;
+	--main-animation-transition : ease-in 0.5s;
+}
+
+
+/*******************************************/
+
+
+
 a,
 a:focus,
 a:hover {
-  color: #fff;
+  color: var(--basic-color);
 }
 
 /* Custom default button */
 .btn-default {
-  color: #fff;
+  color: var(--basic-color);
   text-shadow: none;
   /* Prevent inheritence from `body` */
   background-color: transparent;
-  border: 2px solid #fff;
+  border: 2px solid var(--basic-color);
   border-radius: 20px;
   padding: 0.5rem 2rem;
 }
@@ -33,9 +52,9 @@ body {
 }
 
 body {
-  background: url(../img/cover-csf.jpg) no-repeat center center fixed;
+  background: var(--main-image) no-repeat center center fixed;
   background-size: cover;
-  color: #fff;
+  color: var(--basic-color);
   text-align: center;
   font-family: 'Quicksand', sans-serif;
 }
@@ -47,7 +66,7 @@ body {
   height: 100%;
   /* For at least Firefox */
   min-height: 100%;
-  background: rgba(48, 53, 70, 0.5);
+  background: rgba(48, 53, 70, 0.3);
   box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
 }
 
@@ -70,7 +89,7 @@ body {
  * Header
  */
 .masthead-brand {
-  margin-top: 10px;
+  margin-top: 0px;
   margin-bottom: 10px;
 }
 
@@ -98,12 +117,20 @@ body {
 .cover {
   padding: 0 20px;
 }
-
+.cover .btn-notify:hover{
+	color: var(--main-color);
+	border: 1px solid var(--main-color);
+}
 .cover .btn-notify {
-  padding: 10px 60px;
-  font-weight: 500;
-  text-transform: uppercase;
-  border-radius: 40px;
+      padding: 11px 45px;    margin-top: 3px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 40px;
+    font-size: 11px;
+    border: 1px solid var(--basic-color);
+	transition: var(--main-animation-transition);
+	-moz-transition: var(--main-animation-transition);
+	-webkit-transition: var(--main-animation-transition);
 }
 
 .cover-heading {
@@ -111,19 +138,19 @@ body {
   text-transform: uppercase;
   letter-spacing: 10px;
   font-size: 2rem;
-  margin-bottom: 5rem;
+  margin-bottom: 1.5rem;
 }
 
 @media (min-width: 768px) {
   .cover-heading {
-    font-size: 3.4rem;
-    letter-spacing: 15px;
+    font-size: 2.4rem;
+    letter-spacing: 5px;
   }
 }
 
 .cover-copy {
   max-width: 500px;
-  margin: 0 auto 3rem;
+  margin: 0;
 }
 
 /*
@@ -137,31 +164,85 @@ body {
 
 /*
  * Subscribe modal box
- */
+*/#subscribeModal .modal-content a{
+	color:#000000;
+}
 #subscribeModal .modal-content {
-  background-color: #303546;
-  color: #fff;
+  background-color: var(--basic-color);
+  color: #000000;
   text-align: left;
 }
 
 #subscribeModal .modal-header, #subscribeModal .modal-footer {
   border: 0;
 }
-
+.modal-body img{
+	max-width: 50%;
+	display: block;
+	margin: 0 auto;
+}
 #subscribeModal .close {
-  color: #fff;
+  color: #000000;
 }
 
 #subscribeModal .form-control {
   margin-top: 1rem;
   background: rgba(0, 0, 0, 0.4);
-  color: #fff;
+  color: var(--basic-color);
 }
 
 #subscribeModal .form-control:focus {
   border-color: #49506a;
 }
+.inscription:hover {
+	color:var(--basic-color);
+	text-decoration: none;
+	-webkit-box-shadow: 0px 5px 20px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 20px -10px rgba(0,0,0,0.57);
+	margin-top: -10px;
+}
 
+.inscription {
+	transition: var(--main-animation-transition);
+	-moz-transition: var(--main-animation-transition);
+	-webkit-transition: var(--main-animation-transition);
+	padding: 12px 38px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 40px;
+    font-size: 11px;
+    border: 1px solid var(--main-color);
+    background: var(--main-color);
+    color: var(--basic-color);
+}
+.switchlanguage {
+    display: block;
+    max-width: 200px;
+    margin: 10px auto 0px auto;
+}
+.switchlanguage li{
+	display: inline-block;
+	list-style-type: none;
+	padding: 0px 7px;    font-size: 12px;
+
+}
+.switchlanguage li .active{
+	    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid var(--basic-color);
+}
+.switchlanguage ul{
+	padding: 0;
+}
+h3{
+	font-size:1.2rem;
+}
+#logo{
+	width: 13em;
+	background-color:rgba(255,255,255,0.5); /*Si le logo est noir on lui donne un fond flou*/ 
+	
+	padding: 25px 40px;
+}
 /*
  * Affix and center
  */
@@ -194,4 +275,43 @@ body {
   .cover-container {
     width: 1060px;
   }
+}
+
+@media (max-width: 768px){
+	.cover-heading{
+		letter-spacing: 3px;
+		margin-top: 30px;
+		text-align: center;
+	}
+	.cover-copy{
+		text-align: center;
+		    margin: 0 auto;
+	}
+}
+
+.flexcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    place-content: space-evenly;
+	margin-bottom: 2.5em; 
+}
+.flexcontainer-right {
+    text-align: left;
+}
+.textdescription{
+	margin-bottom: 3em;
+}
+.textdescription bold, .textdescription em, .textdescription strong{
+	color: var(--main-color);
+}
+
+.nav-masthead .nav-link .fa{
+	transition: var(--main-animation-transition);
+	-moz-transition: var(--main-animation-transition);
+	-webkit-transition: var(--main-animation-transition);
+}
+.nav-masthead .nav-link:hover .fa{
+	color: var(--main-color);
 }
